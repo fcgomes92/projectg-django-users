@@ -20,10 +20,12 @@ Quick start
     url(r'^users/', include('users.urls')),
 
 3. Set the dafault send email on the settings file like this::
-	DJANGO_USERS_FROM_EMAIL = "contato@gmail.com"
+
+    DJANGO_USERS_FROM_EMAIL = "contato@gmail.com"
 
 4. If you hava a custom User Model set on the settings like this::
-	AUTH_USER_MODEL = 'my.custom.UserModel'
+
+    AUTH_USER_MODEL = "my.custom.UserModel"
 
 5. Run `python manage.py migrate` to create the user models.
 
