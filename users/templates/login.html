@@ -1,0 +1,70 @@
+{% extends 'base/body.html' %}
+{% block content %}
+{% load static %}
+{% load form_css %}
+
+<div class="col-sm-6 col-xs-12 col-md-4" style="position: absolute;  top: 50%;  left:50%;  transform: translate(-50%,-50%);">
+    <div class="panel panel-default">
+        <div class="panel-heading text-center"><h2>Login</h2></div>
+        <div class="panel-body">
+            <div class="container col-sm-10 col-sm-offset-1">
+                {% if messages %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{% if message.tags %}{% if message.tags == 'error' %}warning{% else %}info{% endif %}{% endif %}"
+                                 role="alert">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+
+{#                <a class="btn btn-block btn-social btn-facebook" href="">#}
+{#                    <i class="fa fa-facebook-square"></i> Sign in with Facebook#}
+{#                </a>#}
+{##}
+{#                <hr>#}
+
+                <form action="" method="post" class="form-horizontal">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            {{ form.email|add_input_attr:"class:form-control;placeholder:Email" }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            {{ form.password|add_input_attr:"class:form-control;placeholder:Password" }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="submit" name="login" id="login" class="btn btn-primary btn-lg btn-block">Login</button>
+                        </div>
+                    </div>
+                </form>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href="{% url "register" %}">
+                            <button type="button" id="register" class="btn btn-default btn-lg btn-block">
+                                Register
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12" style="text-align: center">
+                        <a href="{% url "reset_password" %}">
+                            Forgot my password
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

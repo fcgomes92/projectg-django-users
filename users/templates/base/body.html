@@ -1,0 +1,16 @@
+{% load staticfiles %}
+{% include 'base/header.html' %}
+
+<body id="top">
+<main>
+    <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-social.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+    {% block content %}{% endblock %}
+</main>
+</body>
+
+{% include 'base/footer.html' %}

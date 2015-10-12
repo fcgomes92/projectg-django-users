@@ -1,0 +1,7 @@
+include LICENSE
+include README.rst
+recursive-include users/static *
+recursive-include users/templates *
+recursive-include users/utils *
+recursive-include users/templatetags *
+recursive-include docs *
