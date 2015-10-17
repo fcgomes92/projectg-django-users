@@ -10,7 +10,7 @@ class LoginForm(forms.Form):
 
 
 class PasswordResetRequestForm(forms.Form):
-    email = forms.CharField(label=strings.LBL_PASSWORD, max_length=254)
+    email = forms.CharField(label=strings.LBL_EMAIL, max_length=254)
 
 
 class SetPasswordForm(forms.Form):
